@@ -67,6 +67,4 @@ endif
 
 runtime ./maps.vim
 
-"cmp shit 
-set completeopt=menu,menuone,noselect
 

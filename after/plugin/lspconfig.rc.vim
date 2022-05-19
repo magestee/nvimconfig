@@ -2,6 +2,8 @@ if !exists('g:lspconfig')
   finish
 endif
 
+set completeopt=menu,menuone,noselect
+
 lua << EOF
 require("nvim-lsp-installer").setup {}
 local nvim_lsp = require('lspconfig')
