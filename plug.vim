@@ -6,7 +6,8 @@ call plug#begin()
 
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
-Plug 'flazz/vim-colorschemes'
+Plug 'morhetz/gruvbox'
+
 if has("nvim")
   " LSP Plugins
     Plug 'williamboman/nvim-lsp-installer'
@@ -16,6 +17,9 @@ if has("nvim")
     Plug 'hrsh7th/cmp-nvim-lsp'
     Plug 'hrsh7th/cmp-buffer'
     Plug 'hrsh7th/nvim-cmp'
+
+    Plug 'L3MON4D3/LuaSnip'
+    Plug 'saadparwaiz1/cmp_luasnip'
   " Treesitter
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
