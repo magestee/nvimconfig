@@ -12,8 +12,11 @@
 
 " ** THE BAHAIVIOR **
 " spacing and indent settings
+    " insert 4 spaces for tab
     set tabstop=4 softtabstop=4
+    " the number of spaces inserted for each indentation
     set shiftwidth=4
+    " convert tabs to spaces
     set expandtab
     set smartindent
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
@@ -27,6 +30,9 @@
     set shortmess+=c
 " Scrolling
     set scrolloff=8
+
+    set fileencoding =utf-8 
+
 
 
 " Things that I haven't researched yet (I just copied and pasted):
