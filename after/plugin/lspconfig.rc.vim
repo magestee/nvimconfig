@@ -9,6 +9,7 @@ require("nvim-lsp-installer").setup {}
 local nvim_lsp = require('lspconfig')
 local util = require ('lspconfig/util')
 local protocol = require('vim.lsp.protocol')
+
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_options(...) vim.api.nvim_buf_set_option(bufnr, ...) end
@@ -22,11 +23,12 @@ end
 
 local cmp = require'cmp'
 local lspkind = require'lspkind'
+local luasnip = require("luasnip")
 
 cmp.setup({
     snippet = {
         expand = function(args)
-            require('luasnip').lsp_expand(args.body)
+            luasnip.lsp_expand(args.body)
         end,
     },
     mapping = cmp.mapping.preset.insert({
@@ -38,36 +40,7 @@ cmp.setup({
             behavior = cmp.ConfirmBehavior.Replace,
             select = true
         }),
-        ["<Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-                cmp.select_next_item()
-            elseif luasnip.expandable() then
-                luasnip.expand()
-            elseif luasnip.expand_or_jumpable() then
-                luasnip.expand_or_jump()
-            elseif check_backspace() then
-                fallback()
-            else
-                fallback()
-            end
-            end, {
-                "i",
-                "s",
-        }),
-        ["<S-Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-                cmp.select_prev_item()
-            elseif luasnip.jumpable(-1) then
-                luasnip.jump(-1)
-            else
-                fallback()
-            end
-            end, {
-                "i",
-                "s",
-        }),
     }),
-
     sources = cmp.config.sources({
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
