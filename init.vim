@@ -52,8 +52,15 @@ set isfname+=@-@
 " KEYMAPS:
 let mapleader = " "
 
-" greatest remap ever
-xnoremap <leader>p "_dP
+" resize windows with arrow keys:
+nnoremap <C-Up> :resize +2<CR>
+nnoremap <C-Down> :resize -2<CR>
+nnoremap <C-Left> :vertical resize -2<CR>
+nnoremap <C-Right> :vertical resize +2<CR>
+
+" nwdrd on the side 
+nnoremap <leader>e :Lex 25<cr>
+
 
 " next greatest remap ever : asbjornHaland
 nnoremap <leader>y "+y
@@ -63,8 +70,17 @@ nmap <leader>Y "+Y
 nnoremap <leader>d "_d
 vnoremap <leader>d "_d
 
+
+" indenting like a boss
+vnoremap <  <gv
+vnoremap >  >gv
+
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
+
+" greatest remap ever doesnt replace the the registe
+xnoremap <leader>p "_dP
+
 
 " for when I used parenthesis matcher. no longer needed.
 "inoremap <C-]> <esc><S-a>
