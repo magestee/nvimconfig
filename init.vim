@@ -13,9 +13,9 @@
 " ** THE BAHAIVIOR **
 " spacing and indent settings
     " insert 4 spaces for tab
-    set tabstop=4 softtabstop=4
+    set tabstop=2 softtabstop=2
     " the number of spaces inserted for each indentation
-    set shiftwidth=4
+    set shiftwidth=2
     " convert tabs to spaces
     set expandtab
     set smartindent
