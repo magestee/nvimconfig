@@ -100,3 +100,7 @@ if has('win32')
 endif
 
 runtime ./maps.vim
+
+
+:set mouse=v
+
