@@ -86,10 +86,6 @@ nnoremap <leader>y "*yy
 vnoremap <leader>y "*y
 
 
-" for when I used parenthesis matcher. no longer needed.
-"inoremap <C-]> <esc><S-a>
-"inoremap <C-\> <C-o><leader>
-
 "Imports
 runtime ./plug.vim
 if has("unix")

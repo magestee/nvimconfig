@@ -40,6 +40,8 @@ cmp.setup({
             behavior = cmp.ConfirmBehavior.Replace,
             select = true
         }),
+        ['<C-j>'] = cmp.mapping.select_next_item(),
+        ['<C-k>'] = cmp.mapping.select_prev_item(),
     }),
     sources = cmp.config.sources({
 		{ name = "nvim_lsp" },
@@ -99,6 +101,15 @@ nvim_lsp.tailwindcss.setup{}
 -- VIMLS
 
 -- Python:
+require("lspconfig").pyright.setup(config({
+  settings = {
+    python = {
+      analysis = {
+        typeCheckingMode = "basic", -- Set to "off" to disable type checking, "basic" for basic type checking, or "strict" for strict type checking.
+      },
+    },
+  },
+}))
 
 EOF
 
