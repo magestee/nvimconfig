@@ -25,6 +25,7 @@ if has("nvim")
     " Snippets
     Plug 'L3MON4D3/LuaSnip'
     Plug 'rafamadriz/friendly-snippets'
+
     " Treesitter
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
@@ -34,6 +35,9 @@ if has("nvim")
     Plug 'nvim-telescope/telescope.nvim'
     
     Plug 'windwp/nvim-autopairs'
+    
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'ThePrimeagen/harpoon'
 endif
 
 call plug#end()
