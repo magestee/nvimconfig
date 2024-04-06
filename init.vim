@@ -81,6 +81,10 @@ vnoremap K :m '<-2<CR>gv=gv
 " greatest remap ever doesnt replace the the registe
 xnoremap <leader>p "_dP
 
+" Copy the current line to the clipboard
+nnoremap <leader>y "*yy
+vnoremap <leader>y "*y
+
 
 " for when I used parenthesis matcher. no longer needed.
 "inoremap <C-]> <esc><S-a>
