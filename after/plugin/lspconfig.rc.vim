@@ -61,6 +61,23 @@ local function config(_config)
   }, _config or {})
 end
 
+-- HTML & CSS
+require'lspconfig'.html.setup{
+  on_attach = function(client, bufnr)
+    client.resolved_capabilities.document_formatting = false
+    client.resolved_capabilities.document_range_formatting = false
+  end,
+  filetypes = {"html", "htmldjango", "ejs", "handlebars", "hbs"}
+}
+
+require'lspconfig'.cssls.setup{
+  on_attach = function(client, bufnr)
+    client.resolved_capabilities.document_formatting = false
+    client.resolved_capabilities.document_range_formatting = false
+  end
+}
+
+
 -- TAILWIND
 require('lspconfig').tailwindcss.setup{
   filetypes = { "html", "javascript", "typescript", "php", } 
@@ -69,9 +86,10 @@ require('lspconfig').tailwindcss.setup{
 --JAVASCRIPT AND TYPESCRIPT
 require'lspconfig'.tsserver.setup{
   on_attach = function(client, bufnr)
+    filetypes = {"javascript", "javascriptreact", "typescript", "typescriptreact", "jsx", "tsx"}
     -- Disable default TypeScript server formatting if you prefer to use a different formatter
-    --client.resolved_capabilities.document_formatting = false
-    --client.resolved_capabilities.document_range_formatting = false
+    client.resolved_capabilities.document_formatting = false
+    client.resolved_capabilities.document_range_formatting = false
   end,
 }
 
