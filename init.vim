@@ -106,20 +106,3 @@ runtime ./maps.vim
 
 
 :set mouse=v
-lua << EOF
-function OpenRightTerminal()
-    -- Define the width for the terminal to be a third of the current window width
-    local terminal_width = math.floor(vim.o.columns / 3)
-    -- Open a new vertical split to the right
-    vim.cmd("vsplit")
-    vim.cmd("vertical resize " .. terminal_width)
-    -- Move to the new window to the right
-    vim.cmd("wincmd L")
-    -- Start the terminal
-    vim.cmd("terminal")
-end
-
--- Map this function to a key combination, for example <Leader>vt
-vim.api.nvim_set_keymap('n', '<Leader>t', '<cmd>lua OpenRightTerminal()<CR>', { noremap = true, silent = true })
-
-EOF
