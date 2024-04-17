@@ -61,7 +61,19 @@ local function config(_config)
   }, _config or {})
 end
 
+-- TAILWIND
+require('lspconfig').tailwindcss.setup{
+  filetypes = { "html", "javascript", "typescript", "php", } 
+}
+
 --JAVASCRIPT AND TYPESCRIPT
+require'lspconfig'.tsserver.setup{
+  on_attach = function(client, bufnr)
+    -- Disable default TypeScript server formatting if you prefer to use a different formatter
+    --client.resolved_capabilities.document_formatting = false
+    --client.resolved_capabilities.document_range_formatting = false
+  end,
+}
 
 -- GO
 
@@ -94,9 +106,7 @@ require("lspconfig").gopls.setup(config({
   --  },
  -- }
 
--- tailwind
 
-nvim_lsp.tailwindcss.setup{}
 
 -- VIMLS
 

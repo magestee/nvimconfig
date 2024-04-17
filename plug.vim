@@ -38,6 +38,9 @@ if has("nvim")
     
     Plug 'nvim-lua/plenary.nvim'
     Plug 'ThePrimeagen/harpoon'
+
+    Plug 'christoomey/vim-tmux-navigator'
+
 endif
 
 call plug#end()
