@@ -41,6 +41,13 @@ if has("nvim")
 
     Plug 'christoomey/vim-tmux-navigator'
 
+    Plug 'prettier/vim-prettier', {
+    \ 'do': 'yarn install --frozen-lockfile --production',
+    \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'html', 'yaml']
+    \ }
+
+
+    
 endif
 
 call plug#end()
