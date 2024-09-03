@@ -80,7 +80,7 @@ require'lspconfig'.cssls.setup{
 
 -- TAILWIND
 require('lspconfig').tailwindcss.setup{
-  filetypes = { "html", "javascript", "typescript", "php", } 
+  filetypes = { "html", "javascript", "typescript", "php", "typescriptreact"} 
 }
 
 --JAVASCRIPT AND TYPESCRIPT
@@ -124,7 +124,21 @@ require("lspconfig").gopls.setup(config({
   --  },
  -- }
 
-
+-- Rust
+require('lspconfig').rust_analyzer.setup({
+    on_attach = on_attach,
+    settings = {
+        ["rust-analyzer"] = {
+            cargo = {
+                allFeatures = true,
+            },
+            procMacro = {
+                enable = true,
+            },
+        }
+    },
+    capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()),
+})
 
 -- VIMLS
 

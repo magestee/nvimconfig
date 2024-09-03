@@ -106,3 +106,9 @@ runtime ./maps.vim
 
 
 :set mouse=v
+
+" delete folders that aren't empty in netrw:
+let g:netrw_delete_cmd = 'rm -rf'
+set wrap
+:set linebreak
+
